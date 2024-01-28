@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+	
+    <head>
+		<meta charset="utf-8" />
+		<meta name="author" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+        <title>کتاب</title>
+		 
+        <!-- Custom CSS -->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'css/main.css' %}" rel="stylesheet">
+		
+		<!-- Custom Color Option -->
+		<link href="{% static 'css/colors.css' %}" rel="stylesheet">
+		
+    </head>
+	
+    <body class="red-skin rtl">
+	
+        <div class="header header-light">
+            <div class="container">
+                <nav id="navigation" class="navigation navigation-landscape">
+                    
+                    <div class="nav-menus-wrapper" style="transition-property: none;">
+                        <ul class="nav-menu">
+								
+                            <li><a href="/">خانه</a></li>
+                            <li><a href="/books">کتاب ها </a></li>
+                            
+                        </ul>
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- End Navigation -->
+        <div class="clearfix"></div>
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+		
+		
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+		
+
+	
+			
+			<!-- ============================ Find Courses with Sidebar ================================== -->
+			<section class="pt-100 bg-light">
+				<div class="container"><br>
+					<!-- Row -->
+					<div class="row">
+						<!-- Cource Grid 1 -->
+                        {% for item in books %}
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="education_block_grid style_2">
+                                    <div class="education_block_thumb n-shadow">
+                                        <a href="/books/{{item.id}}/{{item.title}}"><img src="{{ item.image.url }}" style="height: 300px;object-fit: cover;" class="img-fluid" alt=""></a>
+                                    </div>
+                                    
+                                    <div class="education_block_body">
+                                        <h4 class="bl-title"><a href="/books/{{item.id}}/{{item.title}}">{{ item.title  }}</a></h4>
+                                    </div>
+                                    
+                                    <div class="cources_facts">
+                                        <ul class="cources_facts_list">
+                                            <li class="facts-5">{{ item.categories.all.first.title }}</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="cources_info">
+                                    </div>
+                                    
+                                </div>	
+                            </div>
+                        {% endfor %}
+							
+							
+					</div>
+					
+				</div><br><br><br>
+			</section>
+			<!-- ============================ Find Courses with Sidebar End ================================== -->
+			
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/popper.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/select2.min.js' %}"></script>
+		<script src="{% static 'js/slick.js' %}"></script>
+		<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+		<script src="{% static 'js/counterup.min.js' %}"></script>
+		<script src="{% static 'js/custom.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+		<script src="{% static 'js/leader-line.min.js' %}"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->
+
+
+	</body>
+
+</html>

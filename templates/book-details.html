@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+	
+<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+        <title>کتاب</title>
+		 
+        <!-- Custom CSS -->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'css/main.css' %}" rel="stylesheet">
+		
+		<!-- Custom Color Option -->
+		<link href="{% static 'css/colors.css' %}" rel="stylesheet">
+		
+    </head>
+	
+    <body class="red-skin rtl">
+	
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+		
+		
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+		
+            <div class="header header-light">
+                <div class="container">
+                    <nav id="navigation" class="navigation navigation-landscape">
+                        
+                        <div class="nav-menus-wrapper" style="transition-property: none;">
+                            <ul class="nav-menu">
+								
+								<li><a href="/">خانه</a></li>
+								<li><a href="/books">کتاب ها </a></li>
+								
+							</ul>
+                            
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- End Navigation -->
+            <div class="clearfix"></div>
+
+			<!-- ============================ Course Detail ================================== -->
+			<section class="bg-light">
+				<div class="container">
+					<div class="row">
+					
+						<div class="col-lg-8 col-md-8">
+							
+							<!-- Overview -->
+							<div class="edu_wraper border">
+								<h4 class="edu_title">توضیحات</h4>
+								{{ book.description }}
+							</div>
+							
+						</div>
+						
+						<!-- Sidebar -->
+						<div class="col-lg-4 col-md-4">
+						
+							<div class="ed_view_box style_2 border">
+							
+                                <img class="img-fluid" src="{{ book.image.url }}" alt="7.jpg">
+                                <div class="ed_author">
+									
+									<div class="ed_author_box">
+                                        <span>نام کتاب</span>
+                                        <h4>{{ book.title }}</h4>
+									</div>
+								</div>
+								<div class="ed_author">
+									
+									<div class="ed_author_box">
+                                        <span>نویسنده</span>
+                                        <h4>{{ book.writer.title }}</h4>
+									</div>
+								</div>
+								
+                                <div class="ed_author">
+									
+									<div class="ed_author_box">
+                                        <span>ژانر</span>
+                                        <ul>
+                                            {% for cat in book.categories.all %}
+                                                <h4>{{ cat.title }}</h4>
+                                            {% endfor %}
+                                        </ul>
+									</div>
+								</div>
+								
+								
+								
+							</div>	
+							
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							
+						</div>
+					
+					</div>
+				</div>
+			</section>
+			<!-- ============================ Course Detail ================================== -->
+			
+
+		</div>
+<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/popper.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/select2.min.js' %}"></script>
+		<script src="{% static 'js/slick.js' %}"></script>
+		<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+		<script src="{% static 'js/counterup.min.js' %}"></script>
+		<script src="{% static 'js/custom.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+		<script src="{% static 'js/leader-line.min.js' %}"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->
+
+	</body>
+
+</html>
